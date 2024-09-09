@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--<label for="class">Choose the class:</label>
+<select name="class" id="class">     
+   	<option value="I">I</option>
+	<option value="II">II</option>
+	<option value="III">III</option>
+	<option value="IV">IV</option>
+	<option value="V">V</option>
+	<option value="VI">VI</option>
+	<option value="VII">VII</option>
+	<option value="VIII">VIII</option>
+	<option value="IX">IX</option>
+	<option value="X">X</option>
+	<option value="XI">XI</option>
+	<option value="XII">XII</option>
+    
+</select>
+
+<label for="sec">Choose the section:</label>
+<select name="sec" id="sec">     
+   	<option value="A">A</option>
+	<option value="B">B</option>
+	<option value="C">C</option>
+	<option value="D">D</option>
+	<option value="E">E</option>
+</select> -->
+
+
+	<!-- <p> this is here </p>
+	<form action="" method="post">
+		{% csrf_token %}
+		{{ form  }}
+		<input type="submit" value="Submit">
+	  </form> -->
+
+<form action="{% url 'saveclass' %}" method="post">
+		{% csrf_token %}
+		
+		{{ form2 }}
+		
+		<input type="submit" value="save">
+</form>
+
+<!--<form>
+	<label for="sub">date:</label><br>
+	<input type="date" id="year" name="year"><br>
+<button class="go-btn" type="next"><a href="{% url 'timingss' %}"> next </a></button>
+</form>-->
+
+
+
+</html>

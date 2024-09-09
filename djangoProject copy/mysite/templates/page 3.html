@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<h1>TIMINGS</h1>
+<form action="{% url 'savetimings' %}" method="post">
+	{% csrf_token %}
+	
+	{{ form3 }}
+	
+	<input type="submit" value="Submit">
+</form>
+
+
+

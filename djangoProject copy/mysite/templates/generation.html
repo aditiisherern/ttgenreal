@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Table with Break Columns</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .break-col {
+            border-right: 2px solid #ddd;
+        }
+        .table-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1 align="center">{{class_sec}}</h1>
+<div class="container table-container">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Day</th>
+                {% for i in no_periods %}
+                    <th> {{i}} </th>
+                {% endfor %}
+                
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for day, row in combined_data %}
+                <tr>
+                    <td>{{ day }}</td>
+                    {% for cell in row %}
+                        <td {% if forloop.counter == 3 or forloop.counter == 8 %}class="break-col"{% endif %}>
+                            {{ cell }}
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
